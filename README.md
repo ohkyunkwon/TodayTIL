@@ -6,4 +6,4 @@ TodayTIL
 
 * 2023-12-08
 
-* 2023/12/12 SOLID 와 network 정보 공부 하고 내용 정리
+* 2023-12-12 SOLID 와 network 정보 공부 하고 내용 정리
