@@ -1,0 +1,36 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+public class DDayCalculator {
+
+    public static void main(String[] args) {
+        // D-Day 설정 (YYYY, MM, DD 형식)
+        Scanner sc = new Scanner(System.in);
+        System.out.print("D-Day를 입력하세요 (YYYY-MM-DD) : ");
+        String dDayString = sc.nextLine();
+
+        //문자열로 입력받은 D-Day를 LocalDate로 변환
+        LocalDate dDay = LocalDate.parse(dDayString);
+
+        // 현재 날짜와 시간 가져오기
+        LocalDateTime now = LocalDateTime.now();
+
+        // D-Day까지 남을 일, 시간, 분 계산
+        long days = now.until(dDay.atStartOfDay(), ChronoUnit.DAYS);
+        long hours = now.until(dDay.atStartOfDay(), ChronoUnit.HOURS);
+        long minutes = now.until(dDay.atStartOfDay(), ChronoUnit.MINUTES);
+        long seconds = now.until(dDay.atStartOfDay(), ChronoUnit.SECONDS);
+
+        // D-Day 출력
+        System.out.println("D-Day까지 남은 일수: " + days + "일");
+        System.out.println("D-Day까지 남은 시간: " + hours + "시간");
+        System.out.println("D-Day까지 남은 분: " + minutes + "분");
+        System.out.println("D-Day까지 남은 초: " + seconds + "초");
+
+        // 스캐너 닫기
+        sc.close();
+
+    }
+}
